@@ -1,0 +1,19 @@
+Speech Processing Library
+https://google.github.io/tacotron/
+-------------------------------------------
+Frobenius Norm for GLA
+https://paperswithcode.com/method/griffin-lim-algorithm
+-----------------------------------------------
+STFT Explained
+https://gauss256.github.io/blog/cola.html
+------------------------------------------
+Good resource showing GLA's limits
+https://speechprocessingbook.aalto.fi/Modelling/griffinlim.html
+--------------------------------------------------
+CuDNN
+C:\Users\Toby\AppData\Local\Temp\cuda
+https://github.com/NVIDIA/tacotron2
+---------------------------------------
+GLA Python Demo
+https://librosa.org/doc/main/generated/librosa.griffinlim.html
+----------------------------------------------------------
