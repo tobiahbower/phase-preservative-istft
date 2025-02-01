@@ -6,8 +6,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import soundfile as sf
 
-plotPSD = False
-plotWaveforms = False
+plotPSD = True
+plotWaveforms = True
 plotSpectral = True
 pwrThd = -5
 

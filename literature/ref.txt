@@ -17,3 +17,20 @@ https://github.com/NVIDIA/tacotron2
 GLA Python Demo
 https://librosa.org/doc/main/generated/librosa.griffinlim.html
 ----------------------------------------------------------
+
+
+
+
+To do:
+- what does spectrogram data look like? what dimensions 22000x220000x3? Keras.io
+- how does the GLA algorithm work under the hood? tensor?
+- Frobenius norm?
+- Find benefits and applications
+- introduce another constraint into the optimization problem to improve 2307 results. the one 2307 uses is convex?
+
+
+Benefits: MIR, speaker identification, environmental sound characterization, audio generation
+
+Although GLA has been widely utilized because of its simplicity, GLA often involves many iterations until it converges to a certain spectrogram and results in low reconstruction quality. This is because the cost function only requires the consistency, and the characteristics of the target signal are not taken into account.
+
+https://keras.io/api/layers/preprocessing_layers/audio_preprocessing/mel_spectrogram/#:~:text=The%20output%20will%20be%20a,each%20pixel%20to%20represent%20intensity.
