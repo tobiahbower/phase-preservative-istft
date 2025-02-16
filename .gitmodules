@@ -1,0 +1,3 @@
+[submodule "pygla"]
+	path = pygla
+	url = git@github.com:rbarghou/pygriffinlim.git
