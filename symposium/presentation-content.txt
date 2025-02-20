@@ -1,0 +1,3 @@
+16kHz operational freq (instead of 16kHz)
+lower freq result in better algorithm performance because optimization is simpler
+

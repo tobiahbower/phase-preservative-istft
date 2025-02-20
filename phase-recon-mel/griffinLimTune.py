@@ -3,7 +3,7 @@ import numpy as np
 import soundfile as sf
 
 # Load the audio file
-y, sr = librosa.load('billy_recon.wav', sr=None)
+y, sr = librosa.load('billy_recon.wav', sr=16000)
 
 # Compute the Short-Time Fourier Transform (STFT)
 D = librosa.stft(y)
