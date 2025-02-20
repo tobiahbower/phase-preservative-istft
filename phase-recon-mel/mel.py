@@ -10,6 +10,7 @@ plotPSD = True
 plotWaveforms = True
 plotSpectral = True
 pwrThd = -5
+sr=22050 # higher frequencies lead to worse GLA performance!
 
 # clear terminal
 os.system('cls')
@@ -17,7 +18,7 @@ plt.ioff()
 
 # Load audio file
 filepath = './billy.wav'
-y, fs = librosa.load(filepath, duration=20.0)
+y, fs = librosa.load(filepath, sr=sr, duration=20.0)
 print("Sample rate:", fs, "Hz\n")
 
 # short time fourier transform
