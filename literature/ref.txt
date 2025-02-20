@@ -19,6 +19,11 @@ https://librosa.org/doc/main/generated/librosa.griffinlim.html
 ----------------------------------------------------------
 
 
+---------------------------------------------------
+Performance Indicators
+https://github.com/ludlows/PESQ        >3.5 is good, 4.5 max
+https://github.com/mpariente/pystoi    >0.7 is good, 1 max
+-------------------------------------------------
 
 
 To do:
