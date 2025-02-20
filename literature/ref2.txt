@@ -1,0 +1,24 @@
+------------------------------------------------------------------------------------
+https://dsp.stackexchange.com/questions/42219/robust-phase-extraction-of-stft-bins
+
+
+
+------------------------------------------------------------------------------------
+https://stackoverflow.com/questions/68561649/phase-angle-from-fft-using-atan2-weird-behaviour-phase-shift-offset-unwrappi
+
+An bare FFT plus an atan2() only correctly measures the starting phase of an input sinusoid if that sinusoid is exactly integer periodic in the FFT's aperture width.
+
+If the signal is not exactly integer periodic (some other frequency), then you have to recenter the data by doing an FFTshift (rotate the data by N/2) before the FFT. The FFT will then correctly measure the phase at the center of the original data, and away from the circular discontinuity produced by the FFT's finite length rectangular window on non-periodic-in-aperture signals.
+
+If you want the phase at some point in the data other than the center, you can use the estimate of the frequency and phase at the center to recalculate the phase at other positions.
+
+There are other window functions (Blackman-Nutall, et.al.) that might produce a better phase estimate than a rectangular window, but usually not as good an estimate as using an FFTShift.
+
+------------------------------------------------------------------------------------
+Speech Enhancement using Kalman Filter with Preprocessed Digital Expander in Noisy Environment
+
+Iterative Kalman Filter with Pre-Processor Expander for speech enhancement shows better performance than Spectral subtraction, Wiener Filter, and Kalman Filter
+
+
+------------------------------------------------------------------------------------
+https://ecs.utdallas.edu/loizou/speech/noizeus/
