@@ -6,7 +6,7 @@ from scipy.signal import resample
 sr_pesq_req = 16000 # Hz
 x = 'billy_recon.wav'
 y = 'reconstructed_billy_custom.wav'
-
+# y = 'billy_recon_gla.wav'
 
 sr, X = wavfile.read(x)
 sr, Y = wavfile.read(y)
