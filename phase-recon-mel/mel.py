@@ -17,9 +17,9 @@ os.system('cls')
 plt.ioff()
 
 # Load audio file
-# filepath = './michelle-inputs/michelle.wav'
-filepath = './billy-inputs/billy.wav'
-y, fs = librosa.load(filepath, sr=sr, duration=20.0)
+filepath = './michelle-inputs/michelle.wav'
+# filepath = './billy-inputs/billy.wav'
+y, fs = librosa.load(filepath, sr=sr, offset=7.0, duration=20.0)
 print("Sample rate:", fs, "Hz\n")
 
 # short time fourier transform
@@ -32,6 +32,8 @@ if plotPSD:
     plt.colorbar(format='%+2.0f dB')
     plt.title("Power Spectrogram")
     plt.show(block=False)
+    # plt.savefig('billy-outputs/powerthd-10.png', dpi=300)
+    plt.savefig('michelle-outputs/powerthd-10.png', dpi=300)
 
 # create spectrogram
 mel = librosa.feature.melspectrogram(  y=y,
@@ -71,9 +73,12 @@ y_gla = librosa.griffinlim(y_stft_mel)
 y_istft = librosa.istft(y_stft_mel)
 
 # write processed waveforms
-sf.write('billy_recon.wav', y, fs)
-sf.write('billy_recon_gla.wav', y_gla, fs) # decent, but phasing still occurs
-sf.write('billy_recon_istft.wav', y_istft, fs) # bad
+# sf.write('billy_recon.wav', y, fs)
+# sf.write('billy_recon_gla.wav', y_gla, fs) # decent, but phasing still occurs
+# sf.write('billy_recon_istft.wav', y_istft, fs) # bad
+sf.write('michelle_recon.wav', y, fs)
+sf.write('michelle_recon_gla.wav', y_gla, fs) # decent, but phasing still occurs
+sf.write('michelle_recon_istft.wav', y_istft, fs) # bad
 
 # diff the waveforms
 if plotWaveforms:
@@ -87,6 +92,8 @@ if plotWaveforms:
     librosa.display.waveshow(y_istft, sr=fs, color='r', ax=ax[2])
     ax[2].set_title('Magnitude-only ISTFT Reconstruction')
     plt.show(block=False)
+    # plt.savefig('billy-outputs/waveforms.png', dpi=300)
+    plt.savefig('michelle-outputs/waveforms.png', dpi=300)
 
 # spectrogram of GLA waveform
 mel_gla = librosa.feature.melspectrogram(  y=y_gla,
@@ -131,5 +138,6 @@ if plotSpectral:
     i3 = librosa.display.specshow(mel_istft, x_axis='time', y_axis='mel', sr=fs, cmap='viridis', ax=ax[2])
     fig.colorbar(i3, ax=[ax[2]], format='%+2.0f dB')
     ax[2].set(title="Magnitude-only ISTFT Reconstruction")
-    
+    # fig.savefig('billy-outputs/spectrograms-power1.png', dpi=300)
+    fig.savefig('michelle-outputs/spectrograms-power1.png', dpi=300)
     plt.show()
