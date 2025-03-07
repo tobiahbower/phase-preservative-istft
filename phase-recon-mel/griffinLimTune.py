@@ -9,7 +9,7 @@ pwrThd = -10
 
 # Load the audio file
 # y, sr = librosa.load('./billy-inputs/billy_recon.wav', sr=16000)
-y, sr = librosa.load('./michelle_recon.wav', sr=16000)
+y, sr = librosa.load('./billy_recon.wav', sr=16000)
 
 # Compute the Short-Time Fourier Transform (STFT)
 D = librosa.stft(y)
@@ -41,10 +41,11 @@ def griffin_lim(magnitude, n_iter=2, alpha=0.99, lambda_=0.1):
 reconstructed_audio = griffin_lim(magnitude, n_iter=2, alpha=0.99, lambda_=0.01)
 
 # Save the reconstructed audio and plot
-# sf.write('reconstructed_billy_custom.wav', reconstructed_audio, sr)
-sf.write('reconstructed_michelle_custom.wav', reconstructed_audio, sr)
+sf.write('reconstructed_billy_custom.wav', reconstructed_audio, sr)
+# sf.write('reconstructed_michelle_custom.wav', reconstructed_audio, sr)
 plt.figure(figsize=(10,4))
 librosa.display.waveshow(reconstructed_audio, sr=sr)
+plt.savefig("billy-outputs/iterated-waveform.png", dpi=300)
 plt.show()
 
 
@@ -65,4 +66,5 @@ mel[mel < pwrThd] = pwrThd
 plt.figure(figsize=(10,2))
 librosa.display.specshow(mel, x_axis='time', y_axis='mel', sr=sr, cmap='viridis')
 plt.colorbar(format='%+2.0f dB')
+plt.savefig("billy-outputs/iterated-spectrogram.png", dpi=300)
 plt.show()
