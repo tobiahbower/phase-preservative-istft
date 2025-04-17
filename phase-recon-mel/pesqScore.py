@@ -6,11 +6,13 @@ from scipy.signal import resample
 sr_pesq_req = 16000 # Hz
 # x = 'billy_recon.wav'
 # y = 'reconstructed_billy_custom.wav'
-# # y = 'billy_recon_gla.wav'
+# y = 'billy_recon_gla.wav'
+# y = './../Speech-Denoising/billy_kalman_denoised.wav'
 
 x = 'michelle_recon.wav'
 # y = 'reconstructed_michelle_custom.wav'
 y = 'michelle_recon_gla.wav'
+# y = './../Speech-Denoising/michelle_kalman_denoised.wav'
 
 sr, X = wavfile.read(x)
 sr, Y = wavfile.read(y)
